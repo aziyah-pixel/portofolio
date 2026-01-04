@@ -201,13 +201,13 @@ span {
   position: relative;
 }
 
-.typing-text span::before {
+.typing-home span::before {
   content: "software Developer";
   color: #b74b4b;
   animation: words 20s infinite;
 }
 
-.typing-text span::after {
+.typing-home span::after {
   content: "";
   background-color: black;
   position: absolute;
@@ -282,4 +282,51 @@ span {
   #menu-icon {
     display: flex;
   }
+}
+
+#typing-name{
+  color: #b74b4b;
+  margin-left: 0.5rem;
+  border-right: 3px solid #b74b4b;
+  padding-right: 5px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink{
+    0%, 50%{
+        border-color: #b74b4b;
+    }
+    51%, 100%{
+        border-color: transparent;
+    }
+}
+
+.interes a{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background-color: transparent;
+  border: 0.2rem solid #b74b4b;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin: 3rem 1.5rem 3rem 0;
+  color: #b74b4b;
+  overflow: hidden; 
+  transition: 0.3s ease;
+}
+
+.interes a:hover {
+  color: black;
+  transform: scale(1.3) translateY(-5px);
+  background-color: #b74b4b;
+  box-shadow: 0 0 25px #b74b4b;
+}
+
+.interes img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
