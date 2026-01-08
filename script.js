@@ -4,6 +4,7 @@
 const menuIcon = document.getElementById("menu-icon");
 const nav = document.querySelector("nav");
 const icon = menuIcon.querySelector("i");
+const header = document.querySelector("header");
 
 menuIcon.addEventListener("click", () => {
     nav.classList.toggle("active");
@@ -24,34 +25,67 @@ document.querySelectorAll("nav a").forEach(link => {
 });
 
 /* =========================
+   BLUR NAVBAR SAAT SCROLL
+========================= */
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
+
+/* =========================
    TYPING TEXT (ABOUT NAME)
 ========================= */
 const typingText = "Nanda Nur Aziyah";
 const typingElement = document.getElementById("typing-name");
 
-let index = 0;
-let isDeleting = false;
+if (typingElement) {
+  let index = 0;
+  let isDeleting = false;
 
-function typeLoop() {
+  function typeLoop() {
     if (!isDeleting) {
-        // MENGETIK
-        typingElement.textContent = typingText.substring(0, index + 1);
-        index++;
+      typingElement.textContent = typingText.substring(0, index + 1);
+      index++;
 
-        if (index === typingText.length) {
-            setTimeout(() => isDeleting = true, 1500); // jeda setelah selesai
-        }
+      if (index === typingText.length) {
+        setTimeout(() => isDeleting = true, 1500);
+      }
     } else {
-        // MENGHAPUS
-        typingElement.textContent = typingText.substring(0, index - 1);
-        index--;
+      typingElement.textContent = typingText.substring(0, index - 1);
+      index--;
 
-        if (index === 0) {
-            isDeleting = false;
-        }
+      if (index === 0) {
+        isDeleting = false;
+      }
     }
 
     setTimeout(typeLoop, isDeleting ? 80 : 120);
+  }
+
+  typeLoop();
 }
 
-typeLoop();
+
+/* =========================
+   SCROLL ANIMATION PROJECT
+========================= */
+const projects = document.querySelectorAll(".project.animate");
+
+function revealProjects() {
+  projects.forEach(project => {
+    const top = project.getBoundingClientRect().top;
+    const height = window.innerHeight;
+
+    if (top < height - 100) {
+      project.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealProjects);
+window.addEventListener("load", revealProjects);
+

@@ -30,11 +30,19 @@ header {
   width: 100%;
   padding: 1rem 9%;
   background-color: transparent;
-  filter: drop-shadow(10px);
+  //filter: drop-shadow(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  transition: 0.3s ease;
+}
+
+header.scrolled {
+  background: rgba(22, 22, 22, 0.6); /* semi transparan */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: 0.3s ease;
 }
 
 .logo {
@@ -329,4 +337,109 @@ span {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.project{
+  border: 1px solid #b74b4b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 15px auto;
+}
+
+.project:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.project.animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+
+}
+
+.project.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project.animate:nth-child(even) {
+  transform: translateX(60px);
+}
+
+.project.animate:nth-child(even).show {
+  transform: translateX(0);
+}
+
+.project-img{
+  width: 40%;
+  height:300px;
+}
+
+.project-img img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 25px solid #b74b4b;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.project-content{
+  width:60%;
+  //border: 1px solid;
+}
+
+.project-content h3{
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #b74b4b;
+}
+
+p {
+  font-size: 1.3rem;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   RESPONSIVE PROJECT (≤ 995px)
+========================= */
+@media (max-width: 995px) {
+  .project {
+    flex-direction: column !important; /* dari horizontal → vertical */
+    gap: 2rem;
+  }
+
+  .project-img,
+  .project-content {
+    width: 100%; /* full width */
+  }
+
+  .project-img {
+    height: auto;
+  }
+
+  .project-img img {
+    height: auto;
+    object-fit: cover;
+  }
+
+  .project-content h3 {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+  .project-content p {
+    text-align: justify;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+  }
 }
