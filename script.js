@@ -89,3 +89,40 @@ function revealProjects() {
 window.addEventListener("scroll", revealProjects);
 window.addEventListener("load", revealProjects);
 
+/* =========================
+   EXPERIENCE SCROLL ANIMATION
+========================= */
+const timelineItems = document.querySelectorAll(".timeline-item");
+
+function revealTimeline() {
+  timelineItems.forEach(item => {
+    const top = item.getBoundingClientRect().top;
+    const height = window.innerHeight;
+
+    if (top < height - 100) {
+      item.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealTimeline);
+window.addEventListener("load", revealTimeline);
+
+/* =========================
+   CONTACT SCROLL ANIMATION
+========================= */
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    const height = window.innerHeight;
+
+    if (top < height - 100) {
+      el.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
