@@ -309,6 +309,62 @@ span {
     }
 }
 
+.about {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2% 0 0 0;
+}
+
+.about-content{
+  width: 50%;
+  margin: 4% 0 0 5%;
+}
+
+.about-img {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  overflow: hidden;   
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 450px;     /* batas aman agar tidak terlalu besar */
+  height: auto;
+  object-fit: cover;     
+}
+
+@media (max-width: 995px) {
+  .about {
+    flex-direction: column;   /* ubah jadi vertikal */
+    height: auto;
+  }
+
+  .about-img {
+    width: 100%;
+    height: 90vh;             /* tinggi gambar di HP */
+  }
+
+  .about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-content {
+    margin: 8% 0 0 0;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    text-align: justify;
+  }
+
+  .about-content h3 {
+    font-size: 2.5rem;
+  }
+
+}
+
 .interes a{
   display: inline-flex;
   justify-content: center;
@@ -319,7 +375,7 @@ span {
   border: 0.2rem solid #b74b4b;
   font-size: 2rem;
   border-radius: 50%;
-  margin: 3rem 1.5rem 3rem 0;
+  margin: 3rem 1.5rem 0 0;
   color: #b74b4b;
   overflow: hidden; 
   transition: 0.3s ease;
@@ -347,7 +403,7 @@ span {
   gap: 5rem;
   padding: 1rem;
   border-radius: 10px;
-  margin: 15px auto;
+  margin: 5% auto;
 }
 
 .project:nth-child(even) {
@@ -679,3 +735,4 @@ p {
     text-align: center;
   }
 }
+
