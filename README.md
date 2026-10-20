@@ -23,6 +23,7 @@ Melalui website ini, pengunjung dapat mengenal latar belakang, keterampilan tekn
 - JavaScript
 
 ## 🚀 Cara Menjalankan Proyek
+Your site is live at https://aziyah-pixel.github.io/portofolio/
 
 ## 🎯 Tujuan Proyek
 
